@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Bitner - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer utilities {
+      .glass {
+        @apply bg-white/10 backdrop-blur-lg border border-white/20;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white selection:bg-teal-500/60">
+  <header class="glass fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
+    <h1 class="text-xl font-semibold">Samuel Bitner</h1>
+    <nav class="space-x-4">
+      <a href="#about" class="transition-colors hover:text-teal-300">O mnie</a>
+      <a href="#projects" class="transition-colors hover:text-teal-300">Projekty</a>
+      <a href="#contact" class="transition-colors hover:text-teal-300">Kontakt</a>
+    </nav>
+  </header>
+
+  <main class="pt-24">
+    <section id="hero" class="flex min-h-screen flex-col items-center justify-center text-center">
+      <div class="glass rounded-xl p-8 shadow-lg">
+        <h2 class="mb-4 text-4xl font-bold md:text-6xl">Cześć, jestem Samuel</h2>
+        <p class="mb-6 text-lg md:text-2xl">
+          Początkujący freelancer tworzący nowoczesne strony internetowe.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:-translate-y-1 hover:bg-teal-400"
+          >Skontaktuj się ze mną</a
+        >
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto max-w-4xl px-6 py-24">
+      <h3 class="mb-6 text-3xl font-bold text-teal-300">O mnie</h3>
+      <p class="mb-4 leading-relaxed">
+        Nazywam się Samuel Bitner i zaczynam swoją przygodę w świecie tworzenia
+        stron internetowych. Uwielbiam minimalistyczne projekty, które łączą
+        estetykę z funkcjonalnością.
+      </p>
+      <p class="leading-relaxed">
+        Stale poszerzam swoje umiejętności, a każdy nowy projekt jest dla mnie
+        okazją do nauki i rozwoju.
+      </p>
+    </section>
+
+    <section id="projects" class="bg-gray-800/60 py-24">
+      <div class="mx-auto max-w-4xl px-6">
+        <h3 class="mb-6 text-3xl font-bold text-teal-300">Projekty</h3>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div
+            class="glass rounded-xl p-6 transition-transform hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <h4 class="mb-2 text-xl font-semibold">Projekt 1</h4>
+            <p class="text-sm">Opis pierwszego projektu. Wkrótce więcej.</p>
+          </div>
+          <div
+            class="glass rounded-xl p-6 transition-transform hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <h4 class="mb-2 text-xl font-semibold">Projekt 2</h4>
+            <p class="text-sm">Opis drugiego projektu. Wkrótce więcej.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-4xl px-6 py-24">
+      <h3 class="mb-6 text-3xl font-bold text-teal-300">Kontakt</h3>
+      <form class="glass space-y-4 rounded-xl p-6">
+        <input
+          type="text"
+          placeholder="Imię"
+          class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
+        />
+        <textarea
+          placeholder="Wiadomość"
+          class="h-32 w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
+        ></textarea>
+        <button
+          type="submit"
+          class="transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:-translate-y-1 hover:bg-teal-400"
+        >
+          Wyślij
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="p-6 text-center text-sm text-gray-400">
+    &copy; 2024 Samuel Bitner. Wszystkie prawa zastrzeżone.
+  </footer>
+</body>
+</html>
