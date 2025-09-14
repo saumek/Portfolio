@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,37 +8,45 @@
   <style>
     @layer utilities {
       .glass {
-        @apply bg-white/10 backdrop-blur-lg border border-white/20;
+        @apply border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg;
       }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white selection:bg-teal-500/60">
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white antialiased selection:bg-teal-500/60">
   <header class="glass fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-6">
     <h1 class="text-xl font-semibold">Samuel Bitner</h1>
-    <nav class="space-x-4">
-      <a href="#about" class="transition-colors hover:text-teal-300">O mnie</a>
-      <a href="#projects" class="transition-colors hover:text-teal-300">Projekty</a>
-      <a href="#contact" class="transition-colors hover:text-teal-300">Kontakt</a>
+    <nav class="space-x-6">
+      <a href="#about" class="relative px-1 text-sm transition-colors duration-300 hover:text-teal-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-teal-300 after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100 md:text-base">O mnie</a>
+      <a href="#projects" class="relative px-1 text-sm transition-colors duration-300 hover:text-teal-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-teal-300 after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100 md:text-base">Projekty</a>
+      <a href="#contact" class="relative px-1 text-sm transition-colors duration-300 hover:text-teal-300 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-teal-300 after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100 md:text-base">Kontakt</a>
     </nav>
   </header>
 
   <main class="pt-24">
     <section id="hero" class="flex min-h-screen flex-col items-center justify-center text-center">
-      <div class="glass rounded-xl p-8 shadow-lg">
+      <div class="glass fade-in rounded-xl p-8">
         <h2 class="mb-4 text-4xl font-bold md:text-6xl">Cześć, jestem Samuel</h2>
         <p class="mb-6 text-lg md:text-2xl">
           Początkujący freelancer tworzący nowoczesne strony internetowe.
         </p>
-        <a
-          href="#contact"
-          class="inline-block transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:-translate-y-1 hover:bg-teal-400"
-          >Skontaktuj się ze mną</a
-        >
+        <a href="#contact" class="inline-block transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all duration-300 hover:-translate-y-1 hover:bg-teal-400 hover:shadow-lg">Skontaktuj się ze mną</a>
       </div>
     </section>
 
-    <section id="about" class="mx-auto max-w-4xl px-6 py-24">
+    <section id="about" class="fade-in mx-auto max-w-4xl px-6 py-24">
       <h3 class="mb-6 text-3xl font-bold text-teal-300">O mnie</h3>
       <p class="mb-4 leading-relaxed">
         Nazywam się Samuel Bitner i zaczynam swoją przygodę w świecie tworzenia
@@ -55,15 +63,11 @@
       <div class="mx-auto max-w-4xl px-6">
         <h3 class="mb-6 text-3xl font-bold text-teal-300">Projekty</h3>
         <div class="grid gap-6 md:grid-cols-2">
-          <div
-            class="glass rounded-xl p-6 transition-transform hover:-translate-y-1 hover:shadow-2xl"
-          >
+          <div class="glass fade-in rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
             <h4 class="mb-2 text-xl font-semibold">Projekt 1</h4>
             <p class="text-sm">Opis pierwszego projektu. Wkrótce więcej.</p>
           </div>
-          <div
-            class="glass rounded-xl p-6 transition-transform hover:-translate-y-1 hover:shadow-2xl"
-          >
+          <div class="glass fade-in rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
             <h4 class="mb-2 text-xl font-semibold">Projekt 2</h4>
             <p class="text-sm">Opis drugiego projektu. Wkrótce więcej.</p>
           </div>
@@ -71,27 +75,13 @@
       </div>
     </section>
 
-    <section id="contact" class="mx-auto max-w-4xl px-6 py-24">
+    <section id="contact" class="fade-in mx-auto max-w-4xl px-6 py-24">
       <h3 class="mb-6 text-3xl font-bold text-teal-300">Kontakt</h3>
       <form class="glass space-y-4 rounded-xl p-6">
-        <input
-          type="text"
-          placeholder="Imię"
-          class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
-        />
-        <textarea
-          placeholder="Wiadomość"
-          class="h-32 w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"
-        ></textarea>
-        <button
-          type="submit"
-          class="transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all hover:-translate-y-1 hover:bg-teal-400"
-        >
+        <input type="text" placeholder="Imię" class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+        <input type="email" placeholder="Email" class="w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300" />
+        <textarea placeholder="Wiadomość" class="h-32 w-full rounded border border-teal-500 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-300"></textarea>
+        <button type="submit" class="transform rounded-full bg-teal-500 px-6 py-3 font-semibold text-gray-900 transition-all duration-300 hover:-translate-y-1 hover:bg-teal-400 hover:shadow-lg">
           Wyślij
         </button>
       </form>
@@ -101,5 +91,26 @@
   <footer class="p-6 text-center text-sm text-gray-400">
     &copy; 2024 Samuel Bitner. Wszystkie prawa zastrzeżone.
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((el, index) => {
+        el.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
